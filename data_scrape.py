@@ -1,6 +1,7 @@
 import requests
 import json
 import pandas as pd
+import config
 
 class MovieDataFetcher:
     def __init__(self, api_key, bearer_key):
@@ -138,10 +139,10 @@ class MovieDataFetcher:
 
 if __name__ == "__main__":
     # Replace 'YOUR_API_KEY' with your actual API key
-    api_key = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZGMwNzhkM2QxZTkzOGI0NzMyMWExOTY3M2E3MWI1NSIsInN1YiI6IjYzY2IwYzBjZWEzOTQ5MDA5NjlkYjg3ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ofMNS0JTGVIWpDBugAh5hJ-0514dmVehfpDkVLidBHQ"
-    bearer_key = "4dc078d3d1e938b47321a19673a71b55"
+    #api_key = "PLACE API KEY HERE"
+    #bearer_key = "PLACE BEARER KEY HERE"
     # Create an instance of the MovieDataFetcher class
-    movie_fetcher = MovieDataFetcher(api_key, bearer_key)
+    movie_fetcher = MovieDataFetcher(config.api_key, config.bearer_key)
 
     now_playing_df = movie_fetcher.create_now_playing_dataframe()
     movie_info = movie_fetcher.create_tmdb_movie_dataframe()
